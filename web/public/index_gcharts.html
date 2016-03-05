@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FruitFly</title
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+        <h1>PANW - FruitFly</h1>
+        <div align="center">
+            <a id="readme" tabindex="0" class="btn btn-sm btn-default" role="button" data-toggle="popover">README </a>
+        </div>
+
+        <h3>GAP1 - FLOOR #3</h3>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="info">
+                    <pre>AVAILABLE</pre>
+                    <div id="chart_div1" align="center"></div>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                    <div id="chart_div2" align="center"></div>
+                </td>
+                <td  class="info">
+                    <pre>AVAILABLE</pre>
+                    <div id="chart_div3" align="center"></div>
+                </td>
+            </tbody>
+        </table>
+        <h3>GAP1 - FLOOR #4</h3>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="info">
+                    <pre>AVAILABLE</pre>
+                    <div id="chart_div4" align="center"></div>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                    <div id="chart_div5" align="center"></div>
+                </td>
+                <td  class="info">
+                    <pre>AVAILABLE</pre>
+                    <div id="chart_div6" align="center"></div>
+                </td>
+            </tbody>
+        </table>
+        <h3>GAP1 - FLOOR #5</h3>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                </td>
+                <td  class="info">
+                    <pre>AVAILABLE</pre>
+                </td>
+            </tbody>
+        </table>
+    </div>
+
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+
+        h1, h2, h3, th, td {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Shadows Into Light Two', cursive;
+        }
+
+        .table>tbody>tr>th,
+        .table>tbody>tr>td {
+            vertical-align: middle;
+        }
+    </style>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Avg.Time', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+        var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
+        var chart3 = new google.visualization.Gauge(document.getElementById('chart_div3'));
+        var chart4 = new google.visualization.Gauge(document.getElementById('chart_div4'));
+        var chart5 = new google.visualization.Gauge(document.getElementById('chart_div5'));
+        var chart6 = new google.visualization.Gauge(document.getElementById('chart_div6'));
+
+        chart1.draw(data, options);
+        chart2.draw(data, options);
+        chart3.draw(data, options);
+        chart4.draw(data, options);
+        chart5.draw(data, options);
+        chart6.draw(data, options);
+
+      }
+    </script>
+
+    <!-- Custom JS -->
+    <script>
+        $('#readme').popover({
+            trigger: "focus hover",
+            title: "Welcome to FruitFly!",
+            content: "Fruitfly tells you:</br>- If there are fruits in the basket</br>- Average minutes fruits last</br>- Average available times",
+            html: true
+        });
+
+        /*periodically load this js file which has the latest fruit status json*/
+        function updateStatus() {
+            $.get('status.json', function(data) {
+                console.log(data);
+                console.log(data.floor1);
+            });
+
+            var t = setTimeout(function(){updateStatus()},10000);
+        }
+
+        $(document).ready(function() {
+            console.log("Loading FruitFly!");
+            updateStatus();
+        });
+
+    </script>
+  </body>
+</html>

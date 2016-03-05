@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FruitFly</title
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- C3 and D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+        <h1>PANW - FruitFly</h1>
+        <div align="center">
+            <h4 id="insert-date"></h4>
+        </div>
+
+        <div style="padding-top:30px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>GAP1</h3>
+                </div>
+                <div class="col-md-6">
+                    <h3>GAP2</h3>
+                </div>
+            </div>
+            <table class="table table-responsive">
+                <tr>
+                    <th><h4></h4></th>
+                    <th><img src="img/citrus-fruits.png"></img></th>
+                    <th><img src="img/apple.png"></img></th>
+                    <th><img src="img/bananas.png"></img></th>
+                    <th><h4></h4></th>
+                    <th><img src="img/citrus-fruits.png"></img></th>
+                    <th><img src="img/apple.png"></img></th>
+                    <th><img src="img/bananas.png"></img></th>
+                </tr>
+                <tr>
+                    <th><h4>Floor #6</h4></th>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <td class="danger"><i class="fa fa-times"></i></td>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <th><h4></h4></th>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <td class="danger"><i class="fa fa-times"></i></td>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <th><h4>Floor #6</h4></th>
+                </tr>
+                <tr>
+                    <th><h4>Floor #5</h4></th>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <td class="danger"><i class="fa fa-times"></i></td>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <th><h4></h4></th>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <td class="danger"><i class="fa fa-times"></i></td>
+                    <td class="success"><i class="fa fa-check"></i></td>
+                    <th><h4>Floor #5</h4></th>
+                </tr>
+
+            </table>
+        </div>    
+        <div align="center">
+            <a id="readme" tabindex="0" class="btn btn-sm btn-default" role="button" data-toggle="popover">README </a>
+        </div>    
+        <div>
+            <table class="table table-responsive">
+                <tr>
+                    <th>.</th>
+                    <th><h4>FLOOR #2</h4></th>
+                    <th><h4>FLOOR #3</h4></th>
+                    <th><h4>FLOOR #4</h4></th>
+                </tr>
+                <tr>
+                    <th><h5>Basket-1</h5></th>
+                    <td  class="info">
+                        <pre>AVAIL</pre>
+                        <div id="chart_f1_b1" align="center"></div>
+                        <div id="chart_div4" align="center"></div>
+                    </td>
+                    <td  class="danger">
+                        <pre>EMPTY</pre>
+                        <div id="chart_f1_b2" align="center"></div>
+                        <div id="chart_div5" align="center"></div>
+                    </td>
+                    <td  class="info">
+                        <pre>AVAIL</pre>
+                        <div id="chart_f1_b3" align="center"></div>
+                        <div id="chart_div6" align="center"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><h5>Basket-2</h5></th>
+                </tr>
+                <tr>
+                    <th><h5>Basket-3</h5></th>
+                </tr>
+            </table>
+        </div>
+        <h3>GAP1 - FLOOR #3</h3>
+        <table class="table table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="info">
+                    <pre>AVAIL</pre>
+                    <div id="chart_f1_b1" align="center"></div>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                    <div id="chart_f1_b2" align="center"></div>
+                </td>
+                <td  class="info">
+                    <pre>AVAIL</pre>
+                    <div id="chart_f1_b3" align="center"></div>
+                </td>
+            </tbody>
+        </table>
+        <h3>GAP1 - FLOOR #4</h3>
+        <table class="table table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="info">
+                    <pre>AVAIL</pre>
+                    <div id="chart_div4" align="center"></div>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                    <div id="chart_div5" align="center"></div>
+                </td>
+                <td  class="info">
+                    <pre>AVAIL</pre>
+                    <div id="chart_div6" align="center"></div>
+                </td>
+            </tbody>
+        </table>
+        <h3>GAP1 - FLOOR #5</h3>
+        <table class="table table-responsive">
+            <thead>
+                <th>Basket 1</th>
+                <th>Basket 2</th>
+                <th>Basket 3</th>
+            </thead>
+            <tbody>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                </td>
+                <td  class="danger">
+                    <pre>EMPTY</pre>
+                </td>
+                <td  class="info">
+                    <pre>AVAIL</pre>
+                </td>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+
+        h1, h2, h3, h4, h5, th, td {
+            text-align: center;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Shadows Into Light Two', cursive;
+        }
+
+        .table>tbody>tr>th,
+        .table>tbody>tr>td {
+            vertical-align: middle;
+            border-top: none;
+        }
+
+        .c3-chart-arcs .c3-chart-arcs-background {
+            fill: #fcfcfc;
+        }
+    </style>
+
+    <!-- Custom JS -->
+    <script>
+        /* Date */
+        function startTime() {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            var d=today.toDateString();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById("insert-date").innerHTML = h+":"+m+":"+s+" "+d;
+            var t = setTimeout(function(){startTime()},500);
+        }
+        function checkTime(i) {
+            if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+        
+        /* Readme */
+        $('#readme').popover({
+            trigger: "focus hover",
+            title: "Welcome to FruitFly!",
+            content: "Fruitfly tells you:</br>- If there are fruits in the basket</br>- Average minutes fruits last</br>- Average available times",
+            html: true
+        });
+
+        /* All charting */
+        var chart_f1_b1 = c3.generate({
+            bindto: '#chart_f1_b1',
+            data: {
+                columns: [
+                    ['data', 91.4]
+                ],
+                type: 'gauge',
+            },
+            gauge: {
+                min: 0,
+                max: 200,
+                units: ''
+            },
+            color: {
+                pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+                threshold: {
+        //            unit: 'value', // percentage is default
+        //            max: 200, // 100 is default
+                    values: [30, 60, 90, 100]
+                }
+            },
+            size: {
+                width: 180
+            }
+        });
+        var chart_f1_b2 = c3.generate({
+            bindto: '#chart_f1_b2',
+            data: {
+                columns: [
+                    ['data', 25]
+                ],
+                type: 'gauge',
+            },
+            gauge: {
+                min: 0,
+                max: 200,
+                units: ''
+            },
+            color: {
+                pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+                threshold: {
+        //            unit: 'value', // percentage is default
+        //            max: 200, // 100 is default
+                    values: [30, 60, 90, 100]
+                }
+            },
+            size: {
+                width: 180
+            }
+        });
+        var chart_f1_b3 = c3.generate({
+            bindto: '#chart_f1_b3',
+            data: {
+                columns: [
+                    ['data', 150]
+                ],
+                type: 'gauge',
+            },
+            gauge: {
+                min: 0,
+                max: 200,
+                units: ''
+            },
+            color: {
+                pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+                threshold: {
+        //            unit: 'value', // percentage is default
+        //            max: 200, // 100 is default
+                    values: [30, 60, 90, 100]
+                }
+            },
+            size: {
+                width: 180
+            }
+        });
+        
+        var chart_div4 = c3.generate({
+            bindto: '#chart_div4',
+            data: {
+                x: 'x',
+                xFormat: '%H:%M', // 'xFormat' can be used as custom format of 'x'
+                columns: [
+                    ['x', '8:00', '12:00','12:00', '16:00', '16:00', '18:00'],
+                    ['data1', 0, 0,1, 1,0, 0]
+                ]
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    localtime: true,
+                    tick: {
+                        format: '%H:%M'
+                    }
+                },
+                y : {
+                    show: false
+                }
+        
+            },
+            size: {
+                width: 180,
+                height: 150
+            }
+        });
+        var chart_div5 = c3.generate({
+            bindto: '#chart_div5',
+            data: {
+                x: 'x',
+                xFormat: '%H:%M', // 'xFormat' can be used as custom format of 'x'
+                columns: [
+                    ['x', '8:00', '12:00','12:00', '16:00', '16:00', '18:00'],
+                    ['data1', 0, 0,1, 1,0, 0]
+                ]
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    localtime: true,
+                    tick: {
+                        format: '%H:%M'
+                    }
+                },
+                y : {
+                    show: false
+                }
+        
+            },
+            size: {
+                width: 180,
+                height: 150
+            }
+        });
+        var chart_div6 = c3.generate({
+            bindto: '#chart_div6',
+            data: {
+                x: 'x',
+                xFormat: '%H:%M', // 'xFormat' can be used as custom format of 'x'
+                columns: [
+                    ['x', '8:00', '10:00','10:00', '12:00', '12:00', '18:00'],
+                    ['data1', 0, 0,1, 1,0, 0]
+                ]
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    localtime: true,
+                    tick: {
+                        format: '%H:%M'
+                    }
+                },
+                y : {
+                    show: false
+                }
+        
+            },
+            size: {
+                width: 180,
+                height: 150
+            }
+        });
+
+        /* Periodically load this js file which has the latest fruit status json*/
+        function updateStatus() {
+            $.get('status.json', function(data) {
+                //console.log(data);
+                //console.log(data.floor1);
+
+                // To avoid flashing of data, call update only if value has changed
+                if (chart_f1_b1.data.values('data')[0] !== data.floor1[0].weight) {
+                    chart_f1_b1.load({columns:[['data', data.floor1[0].weight]]});
+                }
+                chart_f1_b2.load({columns:[['data', data.floor1[1].weight]]});
+                chart_f1_b3.load({columns:[['data', data.floor1[2].weight]]});
+            });
+
+            //var t = setTimeout(function(){updateStatus()},3000);
+        }
+
+        $(document).ready(function() {
+            console.log("Loading FruitFly!");
+            startTime();
+            updateStatus();
+        });
+
+    </script>
+  </body>
+</html>
