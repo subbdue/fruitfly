@@ -1,0 +1,13 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <h1 align="left"> Sensors
+  <ul>
+    {% for sensor in sensors %}
+    <li> {{ sensor.id }}, {{ sensor.sensorid }}, {{ sensor.location }} </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

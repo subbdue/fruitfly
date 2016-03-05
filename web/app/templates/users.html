@@ -1,0 +1,13 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <h1 align="left"> Database Dump
+  <ul>
+    {% for user in users %}
+    <li> {{ user.id }}, {{ user.nickname }}, {{ user.email }} </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
